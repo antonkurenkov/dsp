@@ -42,3 +42,4 @@ _Response:_
 }
 ```
 
+sudo ssh -i /home/antonkurenkov/.ssh/id_rsa ubuntu@52.59.214.105
