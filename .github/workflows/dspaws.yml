@@ -40,6 +40,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Login to Amazon ECR
-      id: login-ecr
+    - name: Deploy image
       run: sudo docker-compose up --build -d
