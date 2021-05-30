@@ -1,4 +1,4 @@
-rebuild server (detached)
+rebuild server and run (detached)
 ```shell
 sudo docker-compose up --build -d
 ```
