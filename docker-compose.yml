@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      - POSTGRES_DB=dsp
+      - POSTGRES_USER=dsp
+      - POSTGRES_PASSWORD=dsp
+    ports:
+    - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      temp_be:
+        aliases:
+          - db
+  server:
+    build: .
+    environment:
+      - POSTGRES_DB=dsp
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=dsp
+      - POSTGRES_PASSWORD=dsp
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      temp_be:
+        aliases:
+          - be
+
+volumes:
+  postgres_data:
+
+networks:
+  temp_be:
+    name: temp_be
