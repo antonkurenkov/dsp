@@ -6,12 +6,9 @@ User = get_user_model()
 
 class Ingredient(models.Model):
     UNITS = (
-        ("kg", "kg"),
         ("g", "g"),
-        ("mg", "mg"),
-        ("l", "l"),
         ("ml", "ml"),
-        ("items", "items"),
+        ("pcs", "pcs"),
     )
     CATEGORIES = (
         ("milk", "milk"),
