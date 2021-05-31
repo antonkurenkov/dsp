@@ -23,12 +23,17 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-
 from .users import UserViewSet
+from apps.meals.views import (
+    IngredientViewSet,
+    MealViewSet,
+    DailyEatViewSet,
+    ScheduleViewSet,
+)
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
+        title="Meals API",
         default_version='v1',
         description="DSP openapi schema",
         terms_of_service="https://www.google.com/policies/terms/",
@@ -42,6 +47,10 @@ schema_view = get_schema_view(
 
 router = routers.DefaultRouter()
 router.register(r"users", UserViewSet)
+router.register(r"ingredients", IngredientViewSet)
+router.register(r"meals", MealViewSet)
+router.register(r"daily-eats", DailyEatViewSet)
+router.register(r"schedules", ScheduleViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
