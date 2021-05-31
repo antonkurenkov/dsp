@@ -46,5 +46,12 @@ _Response:_
     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzc5MzQzLCJqdGkiOiJjMjZmMTlmODBhOTc0Zjc5OGNjZGI5ODY0NWIwYTU2YiIsInVzZXJfaWQiOjF9.WY_VtvVEfxNombCP8KZKUDWTCVl0RKQ4_Qdbwo3oQPA"
 }
 ```
+_Access to protected resource:_
+```
+GET /users HTTP/1.1
+Host: localhost:80
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzc5MzQzLCJqdGkiOiJjMjZmMTlmODBhOTc0Zjc5OGNjZGI5ODY0NWIwYTU2YiIsInVzZXJfaWQiOjF9.WY_VtvVEfxNombCP8KZKUDWTCVl0RKQ4_Qdbwo3oQPA
+```
+
 
 sudo ssh -i /home/antonkurenkov/.ssh/id_rsa ubuntu@52.59.214.105
