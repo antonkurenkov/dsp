@@ -19,13 +19,18 @@ create superuser
 ```shell
 sudo docker-compose run server bash -c "server/manage.py createsuperuser"
 ```
+
+connect to db container
+```shell
+sudo docker-compose exec db psql -U dsp dsp
+```
 ___
 #Obtain access token
 
 _Request:_
 ```
 POST /api/token/ HTTP/1.1
-Host: localhost:8000
+Host: localhost:80
 Content-Type: application/json
 Content-Length: 52
 
